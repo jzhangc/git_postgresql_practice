@@ -4,6 +4,7 @@ results
 .DS_Store
 .vscode
 log
+db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
