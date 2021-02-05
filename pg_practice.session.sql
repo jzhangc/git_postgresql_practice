@@ -7,5 +7,16 @@
 --     gender VARCHAR(7) NOT NULL,
 --     email VARCHAR(150) NOT NULL
 -- );
-SELECT *
-FROM person;
+-- add some recrod --
+-- INSERT INTO person
+-- VALUES (
+--         1,
+--         'John',
+--         'Smith',
+--         'male',
+--         'john.smith@gmail.com'
+--     ),
+--     (2, 'Sarah', 'Jones', 'female', 'sarah.jones@company.com');
+-- later data type --
+ALTER TABLE person
+ALTER COLUMN email DROP NOT NULL;

@@ -6,7 +6,7 @@
 --
 ------ Create a practice database in a custom location ------
 -- create a table space --
-CREATE TABLESPACE postgres_practice OWNER jingzhang LOCATION '/Users/jingzhang/Documents/git_repo/git_postgresql_practice/db';
+-- CREATE TABLESPACE postgres_practice OWNER jingzhang LOCATION '/Users/jingzhang/Documents/git_repo/git_postgresql_practice/db';
 -- create the database --
 CREATE DATABASE test;
 --
