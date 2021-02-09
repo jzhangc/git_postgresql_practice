@@ -67,6 +67,19 @@ SELECT * FROM person WHERE email LIKE '%@bloomberg.com';
 SELECT * FROM person WHERE email LIKE '%@google.%';
 -- below: select persons whose first name has "o" as the second letter
 SELECT * FROM person WHERE first_name ILIKE '_o%' ORDER BY first_name; 
+-- count unique values in coutry_of_birth column
+SELECT COUNT(DISTINCT country_of_birth) FROM person;
+-- GROUP BY --
+-- GROUP BY with COUNT
+SELECT country_of_birth, COUNT(*) FROM person 
+    GROUP BY country_of_birth
+    ORDER BY count DESC;
+-- GROUP BY with HAVING (aggregation -> conditional filtering)
+-- NOTE: if to use with ORDER BY, HAVING clause has to come before ORDER BY but after GROUP BY
+SELECT country_of_birth, COUNT(*) FROM person
+    GROUP BY country_of_birth
+    HAVING COUNT(*) >= 10
+    ORDER BY count DESC;
 
-
-    
+-- In order to do more stats with aggregation functions, we are using another table data/car.sql --
+-- command: \i <FILE> to run the car.sql data script to import the data table
