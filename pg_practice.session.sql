@@ -58,9 +58,15 @@ SELECT * FROM person ORDER BY country_of_birth LIMIT 10 OFFSET 5;
 SELECT * FROM person 
     WHERE date_of_birth BETWEEN DATE '2013-01-01' AND '2015-01-01'
     ORDER BY date_of_birth;
+SELECT first_name, last_name FROM person 
+    WHERE date_of_birth BETWEEN DATE '1999-01-01' AND '2000-01-01' 
+    LIMIT 10;
 -- LIKE and ILIKE --
 -- NOTE: ILIKE is a case insensitive version of LIKE
 SELECT * FROM person WHERE email LIKE '%@bloomberg.com';
 SELECT * FROM person WHERE email LIKE '%@google.%';
+-- below: select persons whose first name has "o" as the second letter
+SELECT * FROM person WHERE first_name ILIKE '_o%' ORDER BY first_name; 
+
 
     
