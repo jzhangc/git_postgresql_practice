@@ -1,5 +1,5 @@
 # Jing's stuff
-data
+# data # enable in case big datasets are added
 results
 .DS_Store
 .vscode
