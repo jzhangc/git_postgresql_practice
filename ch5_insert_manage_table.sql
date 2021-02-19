@@ -47,6 +47,8 @@ SELECT * FROM person LIMIT 10;
 SELECT * FROM person ORDER BY (country_of_birth, date_of_birth) ASC;
 -- SELECT DISTINCT * FROM --
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth ASC;
+
+---- Filtering  ----
 -- WHERE --
 SELECT * FROM person WHERE gender='Female' ORDER BY last_name ASC;
 SELECT * FROM person WHERE gender='Male' AND country_of_birth IN ('Canada', 'Russia') ORDER BY country_of_birth;
@@ -68,6 +70,12 @@ SELECT * FROM person WHERE email LIKE '%@bloomberg.com';
 SELECT * FROM person WHERE email LIKE '%@google.%';
 -- below: select persons whose first name has "o" as the second letter
 SELECT * FROM person WHERE first_name ILIKE '_o%' ORDER BY first_name; 
+
+-- IS NULL and IS NOT NULL to filter null values --
+SELECT * FROM person 
+    WHERE email IS NULL 
+    ORDER BY last_name ASC 
+    LIMIT 30;
 
 ---- Aggregation  ----
 -- count unique values in coutry_of_birth column
