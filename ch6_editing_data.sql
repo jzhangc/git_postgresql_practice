@@ -14,3 +14,9 @@ insert into person (first_name, last_name, gender, date_of_birth, country_of_bir
 insert into person (first_name, last_name, gender, date_of_birth, country_of_birth, email) values ('Sarah', 'Findlay', 'Genderfluid', '1994-04-22', 'Germany', 'nfindlay1@goo.ne.jp');
 
 ---- unique constraint ------
+
+---- CHECK constraint ------
+-- add a record with an irrelevant value to "gender" --
+insert into person (first_name, last_name, gender, date_of_birth, country_of_birth, email) values ('Dehlia', 'Margrett', 'Car', '1986-02-19', 'Democratic Republic of the Congo', 'dmargrett0@1und1.de');
+
+---- Delete records ----
