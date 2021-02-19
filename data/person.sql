@@ -1,10 +1,10 @@
 create table person (
 	id BIGSERIAL NOT NULL PRIMARY KEY,
-	first_name VARCHAR(50) NOT NULL,
-	last_name VARCHAR(50) NOT NULL,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
 	gender VARCHAR(50) NOT NULL,
 	date_of_birth DATE NOT NULL,
-	country_of_birth VARCHAR(50),
+	country_of_birth VARCHAR(50) NOT NULL,
 	email VARCHAR(150)
 );
 insert into person (id, first_name, last_name, gender, date_of_birth, country_of_birth, email) values (1, 'Turner', 'Francesc', 'Genderqueer', '1999-03-27', 'Indonesia', null);
