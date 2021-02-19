@@ -39,6 +39,7 @@
 --     );
 
 ------ table qury with SELECT FROM  ------
+---- Basic but important operations  ----
 -- NOTE: the data table used here is created using data/person.sql
 -- SELECT * FROM [table] LIMIT <n>; --
 SELECT * FROM person LIMIT 10;
@@ -67,6 +68,8 @@ SELECT * FROM person WHERE email LIKE '%@bloomberg.com';
 SELECT * FROM person WHERE email LIKE '%@google.%';
 -- below: select persons whose first name has "o" as the second letter
 SELECT * FROM person WHERE first_name ILIKE '_o%' ORDER BY first_name; 
+
+---- Aggregation  ----
 -- count unique values in coutry_of_birth column
 SELECT COUNT(DISTINCT country_of_birth) FROM person;
 -- GROUP BY --
@@ -83,3 +86,24 @@ SELECT country_of_birth, COUNT(*) FROM person
 
 -- In order to do more stats with aggregation functions, we are using another table data/car.sql --
 -- command: \i <FILE> to run the car.sql data script to import the data table
+SELECT * FROM car LIMIT 10;
+
+-- MAX, MIN, AVG, SUM --
+SELECT MAX(price) FROM car;
+SELECT MAX(price), MIN(price), ROUND(AVG(price), 2) AS average FROM car;
+SELECT SUM(price) FROM car;
+-- find the highest, lowest and average car prices per maker --
+SELECT make, MAX(price), MIN(price), ROUND(AVG(price), 2) AS average FROM car 
+    GROUP BY make 
+    ORDER BY make ASC; 
+-- Example: sum aggregated by make --
+SELECT make, SUM(price) FROM car
+    GROUP BY make
+    ORDER BY make DESC;
+
+-- Mathematical operations: +, -, /, *, ^, !, % etc --
+SELECT 10-2 AS subtraction;
+SELECT 8!;
+-- query and calculate 10% discount. Results displayed in a table with make, model, original price and discounted price --
+SELECT make, model, price AS original, price*0.1 AS ten_percent, price*0.9 AS ten_percent_off FROM car
+    ORDER BY make ASC;
