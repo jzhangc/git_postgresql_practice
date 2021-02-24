@@ -1,0 +1,3 @@
+------ BIGSERIAL ------
+-- this will use the data script /data/person-car.sql
+---- deleting records with foreign keys ----
